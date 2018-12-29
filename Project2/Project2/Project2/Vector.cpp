@@ -42,6 +42,11 @@ Vector::Vector()
 	elems = vector<int>();
 }
 
+int Vector::Size()
+{
+	return elems.size();
+}
+
 
 Vector::~Vector()
 {

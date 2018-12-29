@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\cppunit.1.12.1.4\build\native\cppunit.props" Condition="Exists('..\packages\cppunit.1.12.1.4\build\native\cppunit.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{364E8F70-98A2-410D-AA15-A7D3F27C37E9}</ProjectGuid>
-    <RootNamespace>Project2</RootNamespace>
+    <ProjectGuid>{E9C568CA-EFC6-4D75-B4B3-0C4EBC91415E}</ProjectGuid>
+    <RootNamespace>CppUnitTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files %28x86%29\CppUnit\Include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Anna\source\repos\CppTest\Project2\Project2\Project2;C:\Program Files %28x86%29\CppUnit\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\CppUnit\Lib\Debug-Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -82,7 +81,6 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);cppunit.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -123,26 +121,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="Vector.h" />
+    <ClCompile Include="..\Project2\Stack.cpp" />
+    <ClCompile Include="..\Project2\Vector.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Stack.cpp" />
-    <ClCompile Include="Vector.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ClInclude Include="..\Project2\Stack.h" />
+    <ClInclude Include="..\Project2\Vector.h" />
+    <ClInclude Include="StackTest.h" />
+    <ClInclude Include="VectorTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\cppunit.1.12.1.4\build\native\cppunit.targets" Condition="Exists('..\packages\cppunit.1.12.1.4\build\native\cppunit.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\cppunit.1.12.1.4\build\native\cppunit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cppunit.1.12.1.4\build\native\cppunit.props'))" />
-    <Error Condition="!Exists('..\packages\cppunit.1.12.1.4\build\native\cppunit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cppunit.1.12.1.4\build\native\cppunit.targets'))" />
-  </Target>
 </Project>

@@ -15,6 +15,7 @@ public:
 	bool IsEmpty();
 	void Clear();
 	void PopBack();
+	int Size();
 	Vector();
 	~Vector();
 };
